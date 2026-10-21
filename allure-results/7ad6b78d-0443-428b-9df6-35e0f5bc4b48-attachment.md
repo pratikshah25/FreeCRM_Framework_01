@@ -1,0 +1,115 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ContactPageTest.spec.js >> @e2e @Regression @Sanity create new contact
+- Location: tests\ContactPageTest.spec.js:13:5
+
+# Error details
+
+```
+TypeError: this.getByRole is not a function
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]: FreeCRM
+    - heading "Login" [level=1] [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: Email*
+        - textbox "Email" [active] [ref=e12]
+      - generic [ref=e13]:
+        - generic [ref=e14]: Password*
+        - generic [ref=e15]:
+          - textbox "Password" [ref=e16]
+          - button "show_password" [ref=e17] [cursor=pointer]
+      - button "Login" [ref=e21] [cursor=pointer]
+    - generic [ref=e22]:
+      - generic [ref=e23]: or
+      - generic [ref=e27]:
+        - iframe [ref=e28]:
+          - button "Continue with Google. Opens in new tab" [ref=f1e3] [cursor=pointer]:
+            - generic [ref=f1e5]: Continue with Google
+        - button "Sign in with Google. Opens in new tab" [ref=e29] [cursor=pointer]
+      - button "Continue with Microsoft" [ref=e30] [cursor=pointer]
+    - generic [ref=e37]:
+      - link "Forgot your password?" [ref=e38] [cursor=pointer]:
+        - /url: /password/forgot
+      - generic [ref=e39]:
+        - text: No Account? Registration takes only a few seconds
+        - link "Sign Up" [ref=e40]:
+          - /url: /register
+  - iframe [ref=e42]:
+    - dialog "Sign in with Google" [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - generic [ref=f2e6]: Sign in to FreeCRM with Google
+        - button "Close" [ref=f2e16]
+      - button "Continue. Opens a new tab." [ref=f2e22] [cursor=pointer]:
+        - generic [ref=f2e24]: Continue
+```
+
+# Test source
+
+```ts
+  1  | import { th } from '@faker-js/faker';
+  2  | import BasePage from './BasePage.js';
+  3  | 
+  4  | export default class ContactPage extends BasePage
+  5  | {
+  6  |     constructor(page)
+  7  |     {
+  8  |         super(page);
+  9  | 
+> 10 |         this.contactLink = this.getByRole('link', {name : 'Contacts'});
+     |                                 ^ TypeError: this.getByRole is not a function
+  11 | 
+  12 |         this.createButton = this.getByRole('button', {name : 'Create'});
+  13 | 
+  14 |         this.firstname = this.getByRole('textbox', {name : 'First Name'});
+  15 | 
+  16 |         this.lastname = this.getByRole('textbox', {name : 'Last Name'});
+  17 | 
+  18 |         this.email = this.getByRole('textbox', {name : 'Email'});
+  19 | 
+  20 |         this.saveButton = this.getByRole('button', {name : 'Save'});
+  21 |     }
+  22 | 
+  23 |     async clickOnContactLink()
+  24 |     {
+  25 |         await this.click(this.contactLink);
+  26 |     }
+  27 | 
+  28 |     async clickOnCreateButton()
+  29 |     {
+  30 |         await this.click(this.createButton);
+  31 |     }
+  32 | 
+  33 |     async enterFirstname(fname)
+  34 |     {
+  35 |         await this.fill(this.firstname, fname);
+  36 |     }
+  37 | 
+  38 |     async enterLastname(lname)
+  39 |     {
+  40 |         await this.fill(this.lastname, lname);
+  41 |     }
+  42 | 
+  43 |     async enterEmail(email)
+  44 |     {
+  45 |         await this.fill(this.email, email);
+  46 |     }
+  47 | 
+  48 |     async clickOnSaveButton()
+  49 |     {
+  50 |         await this.click(this.saveButton);
+  51 |     }
+  52 | }
+```

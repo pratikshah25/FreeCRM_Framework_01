@@ -1,0 +1,57 @@
+{
+  "cookies": [
+    {
+      "name": "g_state",
+      "value": "{\"i_l\":0,\"i_ll\":1792575160883,\"i_b\":\"gSjPk52MIjdhwfqNWsq8uFhyQkVn6nM0aiOA/jjhYE0\",\"i_e\":{\"enable_itp_optimization\":24},\"i_et\":1792575160883}",
+      "domain": "ui.freecrm.com",
+      "path": "/",
+      "expires": 1808127160,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "hw8HHcnRbvJpdKSm0w7xbBl0kImoqTOzbIjF7zWqhxM-1792575163.2710667-1.0.1.1-mf3DQeRJFrG2WbAEYAIwWpcNw6khc1SNGUpXP8na1ktX.OWhNwpmoqiF9uFEG_iNNWaiDy4etHmwoP5GYhY_IPT9F88qpo14u39acPUBVKF04Wjh6wKYYZsCt1Gn5AzF",
+      "domain": ".onesignal.com",
+      "path": "/",
+      "expires": 1792576963.366746,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "NID",
+      "value": "CuQBCAESlgEBOxGDSNZzNwaJ3HNxMCMetpUk1jxu6m2cz1_OeJ5cJ9hd6tPnqrBkRzLyGTxZ9R1reHNi4lT-KIbGHIpAI-8bCq-I2yJX7hD5E_DF9DQBCjzOPN5cTJ3GcRp1XECqR2e3jc3nawOpXJlTLI26Fqhc5_9lGwJl-i-PI58K5hCLxy4tBDsdYSDBVimn0ixya9Hyq_MjQzsoATJFAdKsB88w2cTdVGcsc80kEuCQKp8Ql6Ty1hit_Xi0V_P5ZZMojFLaOclE9QKtUEVwK-vaO89YzZdaZZJSAHG06hzSszII",
+      "domain": ".google.com",
+      "path": "/",
+      "expires": 1808386363.417246,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://ui.freecrm.com",
+      "localStorage": [
+        {
+          "name": "auth_token",
+          "value": "63a58db670798eeec95f394c5b01cc8248700470"
+        },
+        {
+          "name": "fc_dark_mode",
+          "value": "false"
+        },
+        {
+          "name": "fc_ui_theme",
+          "value": "default"
+        },
+        {
+          "name": "version",
+          "value": "1.1.50"
+        }
+      ]
+    }
+  ]
+}

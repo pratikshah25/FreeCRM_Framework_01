@@ -1,0 +1,72 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ContactPageTest.spec.js >> @e2e @Regression Verify user is on Contact page
+- Location: tests\ContactPageTest.spec.js:7:5
+
+# Error details
+
+```
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('//a[@href=\'/contacts\']')
+
+```
+
+# Test source
+
+```ts
+  1  | export default class BasePage
+  2  | {
+  3  |     constructor(page)
+  4  |     {
+  5  |         this.page = page;
+  6  |     }
+  7  | 
+  8  |     async click(locator)
+  9  |     {
+> 10 |         await locator.click();
+     |                       ^ Error: locator.click: Target page, context or browser has been closed
+  11 |     }
+  12 | 
+  13 |     async doubleClick(locator)
+  14 |     {
+  15 |         await locator.dblClick();
+  16 |     }
+  17 | 
+  18 |     async rightClick(locator)
+  19 |     {
+  20 |         await locator.click({button : 'right'});
+  21 |     }
+  22 | 
+  23 |     async clear(locator)
+  24 |     {
+  25 |         await locator.clear();
+  26 |     }
+  27 | 
+  28 |     async title()
+  29 |     {
+  30 |         return this.page.title();
+  31 |     }
+  32 | 
+  33 |     async url()
+  34 |     {
+  35 |         return this.page.url();
+  36 |     }
+  37 | 
+  38 |     async fill(locator, value)
+  39 |     {
+  40 |         await locator.fill(value);
+  41 |     }
+  42 | 
+  43 |     async textContent(locator)
+  44 |     {
+  45 |         await locator.textContent();
+  46 |     }
+  47 | }
+```
