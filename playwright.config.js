@@ -6,7 +6,7 @@ export default defineConfig({
 
    // retries : 1,
 
-  //  workers : 2,
+    workers : 2,
 
     fullyParallel : false,
 
