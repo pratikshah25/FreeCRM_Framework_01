@@ -6,11 +6,11 @@ export default class ContactPage extends BasePage
     {
         super(page);
 
-        this.contactLink = page.locator("//a[@href='/contacts']");
+        this.contactLink = page.locator("//span[text()='Contacts']");
 
-        this.createButton = page.getByRole('button', {name : 'Create'});
+       // this.createButton = page.getByRole('button', {name : 'Create'});
 
-       // this.createButton = page.locator("//button[text()='Create']");
+        this.createButton = page.locator("//button[text()='Create']");
 
         this.firstname = page.getByRole('textbox', {name : 'First Name'});
 
